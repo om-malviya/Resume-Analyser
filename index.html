@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Career Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app-container">
+        <aside class="sidebar">
+            <div class="brand"><h1>CareerHub</h1></div>
+            <nav class="nav-menu">
+                <div class="nav-item active" data-section="resume">📄 Resume Manager</div>
+                <div class="nav-item" data-section="jobs">💼 Job Matches</div>
+                <div class="nav-item" data-section="profile">👤 Profile</div>
+            </nav>
+            <button class="logout-btn">🚪 Logout</button>
+        </aside>
+
+        <main class="main-content">
+            <section id="resume-section" class="section active">
+                <header class="section-header"><h2>Resume Manager</h2></header>
+                <div class="content-wrapper">
+                    <div id="upload-container" class="upload-container">
+                        <div id="resume-dropzone" class="dropzone">
+                            📎 <h3>Upload Your Resume</h3>
+                            <p>Drag & drop your resume here or click to browse</p>
+                            <input type="file" id="file-input" accept=".pdf,.doc,.docx" hidden>
+                        </div>
+                    </div>
+                    <div class="analysis-container">
+                        <div class="skills-section"><h3>Skills</h3><div id="skills-list" class="skills-list"></div></div>
+                        <div class="suggestions-section"><h3>Improvement Suggestions</h3><div id="suggestions-list"></div></div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="jobs-section" class="section">
+                <header class="section-header"><h2>Job Matches</h2></header>
+                <div class="content-wrapper">
+                    <div class="search-filters">
+                        <input type="text" id="job-search" placeholder="Search jobs..." class="search-input">
+                        <select id="location-filter" class="filter-select"><option value="">All Locations</option></select>
+                    </div>
+                    <div id="jobs-container" class="jobs-container"></div>
+                </div>
+            </section>
+
+            <section id="profile-section" class="section">
+                <header class="section-header"><h2>Profile</h2></header>
+                <div class="content-wrapper"></div>
+            </section>
+        </main>
+    </div>
+
+    <div id="notification" class="notification"></div>
+    <script src="REsume.js"></script>
+</body>
+</html>
